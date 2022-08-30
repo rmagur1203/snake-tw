@@ -1,0 +1,38 @@
+{
+  "name": "snake-tw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "watch": "webpack --watch",
+    "build": "webpack --mode production",
+    "lint": "eslint --ext .ts src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmagur1203/snake-tw.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmagur1203/snake-tw/issues"
+  },
+  "homepage": "https://github.com/rmagur1203/snake-tw#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "eslint": "^8.21.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  },
+  "dependencies": {
+      "the-world-engine": "^0.4.27"
+  }
+}
