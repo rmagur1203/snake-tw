@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/rmagur1203/snake-tw#readme",
   "devDependencies": {
+    "@types/three": "^0.143.2",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
     "eslint": "^8.21.0",
@@ -33,6 +34,7 @@
     "webpack-dev-server": "^4.9.3"
   },
   "dependencies": {
-      "the-world-engine": "^0.4.27"
+    "the-world-engine": "^0.4.27",
+    "three": "^0.143.0"
   }
 }
