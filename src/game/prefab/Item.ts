@@ -10,10 +10,10 @@ import { Vector2 } from "three/src/Three";
 import { ItemScript } from "../scripts/Item";
 
 export class ItemPrefab extends Prefab {
-    private gridCollider = new PrefabRef<BoxCollider2D>();
+    private _gridCollider = new PrefabRef<BoxCollider2D>();
 
-    public initialize(gridCollider: PrefabRef<BoxCollider2D>) {
-        this.gridCollider = gridCollider;
+    public initialize(gridCollider: PrefabRef<BoxCollider2D>): ItemPrefab {
+        this._gridCollider = gridCollider;
         return this;
     }
 
@@ -34,7 +34,7 @@ export class ItemPrefab extends Prefab {
                 c.debugDraw = false;
             })
             .withComponent(ItemScript, (c) => {
-                c.mapCollider2D = this.gridCollider.ref ?? undefined;
+                c.mapCollider2D = this._gridCollider.ref ?? undefined;
             });
     }
 }

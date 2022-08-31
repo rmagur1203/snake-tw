@@ -23,7 +23,7 @@ export default class SnakeController extends Component {
     private readonly _spawnSegmentCountAtStart = 4;
     private readonly _segments: Transform[] = [];
 
-    private gameover() {
+    private gameover(): void {
         this.engine.scene.iterateChild((transform) => {
             if (transform.gameObject.name === "gamescene") {
                 transform.gameObject.destroy();
@@ -36,7 +36,7 @@ export default class SnakeController extends Component {
         );
     }
 
-    public onTriggerEnter2D(collision: Collider2D) {
+    public onTriggerEnter2D(collision: Collider2D): void {
         if (collision.gameObject.name === "item") {
             this.spawnSegment();
         } else if (collision.gameObject.name === "segment") {
@@ -44,7 +44,7 @@ export default class SnakeController extends Component {
         }
     }
 
-    public awake() {
+    public awake(): void {
         this._segments.push(this.transform);
 
         this.spawnSegment("neck");
@@ -55,7 +55,7 @@ export default class SnakeController extends Component {
         this.startCoroutine(this.move());
     }
 
-    private spawnSegment(name = "segment") {
+    private spawnSegment(name = "segment"): void {
         const segment: GameObject = this.transform.parent!.gameObject.addChildFromBuilder(
             this.engine.instantiater.buildPrefab(name, SnakeSegment).make()
         );
@@ -64,7 +64,7 @@ export default class SnakeController extends Component {
         this._segments.push(segment.transform);
     }
 
-    private moveSegment() {
+    private moveSegment(): void {
         this._moveDirection = this._lastInputDirection;
 
         for (let i = this._segments.length - 1; i > 0; i -= 1) {
@@ -92,7 +92,7 @@ export default class SnakeController extends Component {
         }
     }
 
-    public update() {
+    public update(): void {
         const inputMap = this.engine.input.map;
         if (this._moveDirection.x !== 0) {
             if (inputMap.get("ArrowUp")) this._lastInputDirection = new Vector2(0, 1);

@@ -1,4 +1,3 @@
-/* eslint-disable promise/always-return */
 import {
     AsyncImageLoader,
     BoxCollider2D,

@@ -3,11 +3,11 @@ import { BoxCollider2D, Component } from "the-world-engine";
 export class ItemScript extends Component {
     public mapCollider2D?: BoxCollider2D;
 
-    public onTriggerEnter2D() {
-        this.SetupRandomPosition();
+    public onTriggerEnter2D(): void {
+        this.setupRandomPosition();
     }
 
-    public SetupRandomPosition() {
+    public setupRandomPosition(): void {
         const bounds = this.mapCollider2D!.size;
 
         const x = Math.floor(Math.random() * (bounds.x - 1) - bounds.x / 2) + 1;
@@ -16,7 +16,7 @@ export class ItemScript extends Component {
         this.transform.position.set(x, y, 0);
     }
 
-    public awake() {
-        this.SetupRandomPosition();
+    public awake(): void {
+        this.setupRandomPosition();
     }
 }
