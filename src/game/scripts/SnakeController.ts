@@ -17,7 +17,7 @@ export default class SnakeController extends Component {
     public mapCollider2D?: BoxCollider2D;
 
     private readonly _moveTime = 0.1;
-    private _moveDirection = new Vector2(1, 0);
+    private _moveDirection = new Vector2(0, 0);
     private _lastInputDirection = new Vector2(1, 0);
 
     private readonly _spawnSegmentCountAtStart = 4;
